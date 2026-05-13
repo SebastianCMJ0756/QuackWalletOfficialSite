@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
+
+/* --- ELIMINAR SCROLLBAR DEFINITIVO --- */
+html, body {
+    overflow: hidden !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+main {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding-right: 0 !important;
+    width: 100vw !important;
+}
+
+main::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+main::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: transparent !important;
+}
+
 @theme {
   --color-amarillo-quack: #fdd87d; 
   --color-crema-quack: #fef5da;
@@ -73,7 +108,7 @@ section {
   5.27%, 100% { opacity: 0; z-index: 10; }
 }
 
-/* --- DELAYS NEGATIVOS PARA BUCLE INSTANTÁNEO --- */
+/* --- Imagenes del prototipo Seccion 2 --- */
 .screen:nth-child(1)  { animation-delay: 0s; }
 .screen:nth-child(2)  { animation-delay: -90s; }
 .screen:nth-child(3)  { animation-delay: -85s; }
@@ -249,7 +284,7 @@ section {
 /* --- MÓVIL (Todo visible) --- */
 @media (max-width: 767px) {
   .member-card-wrapper { max-width: 100%; }
-  .member-img { filter: none; brightness: 0.3; }
+  .member-img { filter: none; filter:brightness(0.3); }
   .member-info, .member-socials-top { opacity: 1; transform: none; }
   .member-socials-top { position: absolute; top: 10px; } /* Ajuste pequeño para móvil */
 }
@@ -261,4 +296,22 @@ footer {
     min-height: 20vh; /* Le da una altura razonable */
     display: flex;
     align-items: center;
+}
+
+@keyframes logoFade {
+    0%, 40% { opacity: 1; z-index: 10; }
+    50%, 100% { opacity: 0; z-index: 0; }
+}
+
+@keyframes logoFadeAlt {
+    0%, 50% { opacity: 0; z-index: 0; }
+    60%, 100% { opacity: 1; z-index: 10; }
+}
+
+.animacion-logo {
+    animation: logoFade 10s infinite ease-in-out;
+}
+
+.animacion-logo:nth-child(2) {
+    animation: logoFadeAlt 10s infinite ease-in-out;
 }

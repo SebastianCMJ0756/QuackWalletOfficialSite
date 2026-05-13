@@ -9,7 +9,58 @@
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/732/732190.png"> 
 
     <link rel="icon" type="image/png" href="imagenes/logodef04.png">
-    
+    <style>
+    /* Reglas de scrollbar más agresivas */
+    html, body {
+        overflow: hidden !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    main {
+        height: 100vh !important;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        width: 100vw !important;
+    }
+
+    main::-webkit-scrollbar {
+        width: 0px !important;
+        height: 0px !important;
+        display: none !important;
+    }
+
+    main::-webkit-scrollbar-track {
+        background: transparent !important;
+        display: none !important;
+    }
+
+    main::-webkit-scrollbar-thumb {
+        background: transparent !important;
+        display: none !important;
+    }
+
+    /* Animación manual para los logos */
+    @keyframes logoFade {
+        0%, 40% { opacity: 1; z-index: 10; }
+        50%, 100% { opacity: 0; z-index: 0; }
+    }
+
+    @keyframes logoFadeAlt {
+        0%, 50% { opacity: 0; z-index: 0; }
+        60%, 100% { opacity: 1; z-index: 10; }
+    }
+
+    .animacion-logo {
+        animation: logoFade 10s infinite ease-in-out;
+    }
+
+    .animacion-logo:nth-child(2) {
+        animation: logoFadeAlt 10s infinite ease-in-out;
+    }
+    </style>
 </head>
 
 
@@ -21,7 +72,7 @@
         
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40"></div>
     </div>
-    <main class="h-screen overflow-y-scroll snap-y snap-mandatory no-scrollbar">
+    <main class="h-screen snap-y snap-mandatory no-scrollbar">
         
         <section id="inicio" class="relative h-screen w-full snap-start overflow-hidden px-6 py-10 flex flex-col justify-between">
     
@@ -35,8 +86,15 @@
         </div>
 
         <div class="absolute top-10 right-10 w-24 h-24 md:w-40 md:h-40">
-            <img src="imagenes/logodef04.png" class="absolute inset-0 w-full h-full object-contain animate-[fade-alternate_15s_infinite]" alt="Logo QuackWallet">
-            <img src="imagenes/semillerologo.jpeg" class="absolute inset-0 w-full h-full object-contain animate-[fade-alternate_15s_infinite_reverse]" alt="Logo IsQuanTum">
+            <!-- Primer Logo -->
+            <img src="imagenes/logodef04.png" 
+                class="absolute inset-0 w-full h-full object-contain animacion-logo" 
+                alt="Logo QuackWallet">
+            
+            <!-- Segundo Logo -->
+            <img src="imagenes/semillerologo.jpeg" 
+                class="absolute inset-0 w-full h-full object-contain animacion-logo" 
+                alt="Logo IsQuanTum">
         </div>
 
         <div class="flex flex-col md:flex-row justify-between items-end w-full gap-6">
