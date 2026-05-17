@@ -20,6 +20,8 @@ main {
     -ms-overflow-style: none !important;
     padding-right: 0 !important;
     width: 100vw !important;
+    scroll-behavior: smooth !important;
+    -webkit-scroll-behavior: smooth !important;
 }
 
 main::-webkit-scrollbar {
@@ -42,7 +44,7 @@ main::-webkit-scrollbar-thumb {
 
 /* --- FIX DE SCROLL SNAP --- */
 html {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
@@ -100,6 +102,9 @@ section {
   opacity: 0;
   /* 95s = 19 imágenes x 5s cada una */
   animation: fadeCycle 95s infinite;
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @keyframes fadeCycle {
@@ -196,6 +201,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Texto abajo */
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* --- ICONOS SUPERIORES --- */

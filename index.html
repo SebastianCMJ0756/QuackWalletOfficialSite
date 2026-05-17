@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+    <!--Enlaces/bibliotecas necesarias -->      
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quackwallet</title>
-    <link rel="stylesheet" href="./dist/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/732/732190.png"> 
+    <link rel="stylesheet" href="./dist/output.css"> <!-- Enlace a tailwindcss-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--Enlace para iconos de Font Awesome -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/732/732190.png"> <!-- Enlace al icono de la pestaña -->
 
-    <link rel="icon" type="image/png" href="imagenes/logodef04.png">
+    <link rel="icon" type="image/png" href="imagenes/logodef04.png"> <!-- Logo del proyecto QuackWallet -->
     <style>
-    /* Reglas de scrollbar más agresivas */
+    /* Para ocultar el scrollbar */
     html, body {
         overflow: hidden !important;
         height: 100%;
@@ -42,7 +43,7 @@
         display: none !important;
     }
 
-    /* Animación manual para los logos */
+    /* Animacion de los logos (Aparecer y desaparecer) */
     @keyframes logoFade {
         0%, 40% { opacity: 1; z-index: 10; }
         50%, 100% { opacity: 0; z-index: 0; }
@@ -55,25 +56,30 @@
 
     .animacion-logo {
         animation: logoFade 10s infinite ease-in-out;
+        will-change: opacity;
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     .animacion-logo:nth-child(2) {
         animation: logoFadeAlt 10s infinite ease-in-out;
+        will-change: opacity;
     }
     </style>
 </head>
 
-
+<!--Inicio cuerpo del sitio web-->
 <body class="bg-black antialiased selection:bg-blue-500/30">  
-
+                                <!-- Fondo/Wallpapaer -->
     <div class="fixed inset-0 -z-10 bg-black"> <img src="imagenes/layered-peaks-haikei (2).png" 
             class="w-full h-full object-cover opacity-100 transition-opacity duration-1000" 
-            alt="Background">
-        
+            alt="Background">        
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40"></div>
     </div>
+
+    <!-- Contenido principal -->
     <main class="h-screen snap-y snap-mandatory no-scrollbar">
-        
+        <!-- Inicio de Sección numero 1: Inicio -->
         <section id="inicio" class="relative h-screen w-full snap-start overflow-hidden px-6 py-10 flex flex-col justify-between">
     
         <div class="flex-grow flex flex-col items-center justify-center text-center">
@@ -119,10 +125,11 @@
                 </div>
             </div>
         </div>
-
     </section>
+    <!--  Fin de Sección numero 1: Inicio -->    
 
-    <section id="info" class="bg-[#fef5da]">
+    <!--  Inicio de Sección numero 2: Información + prototipo -->
+    <section id="info">
         <div class="info-grid px-4">
             
             <div class="flex flex-col items-center order-1 w-full">
@@ -177,13 +184,14 @@
 
         </div>
     </section>
+    <!--  Fin de Sección numero 2: Información + prototipo -->
 
 
     
 
 
 
-
+<!-- Inicio Seccion final: Equipo/Integrantes de QuackWallet-->
     <section id="equipo" class="min-h-screen w-full snap-start flex flex-col items-center justify-center bg-black py-10 px-6">
         <h2 class="text-[#fdd87d] font-black text-5xl md:text-6xl uppercase tracking-[0.3em] mb-16 text-center">Conoce a nuestro equipo</h2>
 
@@ -201,7 +209,7 @@
                     
                     <div class="member-info">
                         <h3 class="name">Manuel Jose Rivera Guzman</h3>
-                        <p class="role">Desarrollador backend encargado del backend de la aplicación (Líder nato).</p>
+                        <p class="role">Desarrollador backend de la aplicación y todos sus componentes.</p>
                     </div>
                 </label>
             </div>
@@ -238,10 +246,6 @@
             <div class="member-card-wrapper">
                 <input type="radio" name="member" id="member4" class="member-check">
                 <label for="member4" class="member-card">
-                    <div class="member-socials-top">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
                     <img src="imagenes/JuanCarlosProfile.png" class="member-img">
                     <div class="member-info">
                         <h3 class="name">Juan Carlos Gonzales</h3>
@@ -257,6 +261,7 @@
             </p>
         </footer>
     </section>
+    <!--  Fin Seccion final: Equipo/Integrantes de QuackWallet-->
 </main>
 
 </body>
