@@ -65,6 +65,150 @@
         animation: logoFadeAlt 10s infinite ease-in-out;
         will-change: opacity;
     }
+
+    /* ESTILOS ACTUALIZADOS SECCIÓN PLANES */
+    #planes .grid > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        border-radius: 2.5rem !important;
+        overflow: hidden !important;
+        position: relative !important;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+        height: auto !important;
+        min-height: 600px !important;
+    }
+
+    #planes .grid > div:hover {
+        transform: translateY(-12px) !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    #planes .bg-\[\#121212\] {
+        background: linear-gradient(180deg, rgba(25, 30, 40, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%) !important;
+        border: 1px solid rgba(253, 216, 125, 0.1) !important;
+    }
+
+    #planes .bg-\[\#fdd87d\] {
+        background: linear-gradient(135deg, #fdd87d 0%, #fcc956 100%) !important;
+        border: none !important;
+    }
+
+    .card-header-top {
+        width: 100% !important;
+        height: 80px !important;
+        background: linear-gradient(135deg, rgba(253, 216, 125, 0.15) 0%, rgba(253, 216, 125, 0) 100%) !important;
+        position: relative !important;
+        flex-shrink: 0 !important;
+    }
+
+    #planes .bg-\[\#fdd87d\] .card-header-top {
+        background: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .card-highlight {
+        width: 100px !important;
+        height: 100px !important;
+        background: linear-gradient(135deg, #fdd87d 0%, #fcc956 100%) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: absolute !important;
+        top: 30px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        box-shadow: 0 8px 25px rgba(253, 216, 125, 0.25) !important;
+        font-size: 2.5rem !important;
+        font-weight: 900 !important;
+        color: #1a1a1a !important;
+        flex-shrink: 0 !important;
+        z-index: 2 !important;
+    }
+
+    #planes .bg-\[\#fdd87d\] .card-highlight {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+        color: #fdd87d !important;
+    }
+
+    .card-content {
+        padding: 70px 1.5rem 1.5rem !important;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-height: none !important;
+    }
+
+    .card-content h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .card-content > p:first-of-type {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .card-content ul {
+        margin-bottom: 1.5rem !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .card-content ul li {
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    .card-footer {
+        width: 100% !important;
+        padding: 1.5rem !important;
+        flex-shrink: 0 !important;
+        margin-top: auto !important;
+    }
+
+    .card-footer button {
+        width: 100% !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .card-footer button:hover {
+        transform: scale(1.02) !important;
+    }
+
+    @media (max-width: 768px) {
+        #planes .grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+        }
+
+        #planes .grid > div {
+            min-height: auto !important;
+        }
+        
+        .card-highlight {
+            width: 90px !important;
+            height: 90px !important;
+            top: 25px !important;
+            font-size: 2rem !important;
+        }
+        
+        .card-content {
+            padding: 55px 1.5rem 1.5rem !important;
+        }
+        
+        .card-header-top {
+            height: 70px !important;
+        }
+    }
     </style>
 </head>
 
@@ -186,10 +330,110 @@
     </section>
     <!--  Fin de Sección numero 2: Información + prototipo -->
 
+    <!--  Inicio de Sección numero 3: Plan/Modelo de negocios -->
 
-    
+    <section id="planes" class="min-h-screen w-full snap-start flex flex-col items-center justify-center py-20 px-4 md:px-6 relative">
+        
+        <div class="flex flex-col items-center text-center mb-16 relative z-10">
+            <img src="imagenes/logodef04.png" class="w-16 h-16 object-contain mb-6" alt="Logo Quack">
+            <h2 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6">
+                Aprovecha más ventajas con <span class="text-[#fdd87d]">QuackWallet</span>
+            </h2>
+            <p class="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
+                Más beneficios, más seguridad, más control con el plan premium de QuackWallet.
+            </p>
+            
+            <a href="#" class="bg-[#fdd87d] text-black px-12 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                Obtener 
+            </a>
+        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto items-stretch">
+            
+            <div class="bg-[#121212] flex flex-col justify-between custom-card">
+                <div class="card-header-top"></div>
+                <div class="card-highlight">💰</div>
+                <div class="card-content flex-1 flex flex-col justify-between pt-16 px-6 pb-4">
+                    <div>
+                        <h3 class="text-[#fef5da] text-2xl font-black mb-2">Estándar</h3>
+                        <p class="text-[#fef5da] text-sm mb-6">Seguridad esencial</p>
+                        <div class="text-5xl font-black text-[#fdd87d] mb-6">Gratis</div>
+                    </div>
+                    <ul class="space-y-3 text-[#fef5da]/85 text-sm my-auto text-left mx-auto w-fit block">
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">✓</span> Autorizacion basica por PIN</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">✓</span> Historial de transacciones</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">✓</span> Control basico de gastos</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">✓</span> Almacenamiento de tarjetas > 4</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">✓</span> Metodos basicos de seguridad</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">✓</span> Chatbot gratuito</li>
+                    </ul>
+                </div>
+                <div class="card-footer p-6">
+                    <button class="w-full bg-[#fdd87d] text-black py-3.5 px-6 rounded-full font-bold hover:brightness-110 transition-all duration-300 text-sm shadow-md hover:scale-[1.02]">
+                        Empezar gratis
+                    </button>
+                </div>
+            </div>
 
+            <div class="bg-[#121212] relative flex flex-col justify-between custom-card">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 ml-8 bg-gradient-to-r from-[#fdd87d] to-[#fcc956] text-black text-sm font-black px-7 py-2.5 rounded-full uppercase tracking-wider shadow-xl z-20 whitespace-nowrap">
+                    Recomendado
+                </div>
+                <div class="card-header-top" style="background: linear-gradient(135deg, rgba(253, 216, 125, 0.3) 0%, rgba(253, 216, 125, 0.1) 100%);"></div>
+                <div class="card-highlight">👑</div>
+                <div class="card-content flex-1 flex flex-col justify-between pt-16 px-6 pb-4">
+                    <div>
+                        <h3 class="text-[#fef5da] text-2xl font-black mb-2">Premium</h3>
+                        <p class="text-[#fef5da] text-sm mb-4">Seguridad avanzada</p>
+                        <div class="mb-1">
+                            <span class="text-5xl font-black text-white">$$$</span>
+                            <span class="text-white/40 text-sm font-light ml-2">/mes</span>
+                        </div>
+                        <p class="text-[#fdd87d] text-s font-semibold mb-6">Facturación mensual</p>
+                    </div>
+                    <ul class="space-y-3 text-[#fef5da]/85 text-sm my-auto text-left mx-auto w-fit block">
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">★</span> Prediccion de gastos</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">★</span> Reportes avanzados</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">★</span> Soporte personalizado</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">★</span> Mas almacenamiento de tarjetas 4 > 7</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">★</span> Metodos avanzados de seguridad</li>
+                        <li class="flex items-center gap-2 text-[#fef5da]"><span class="text-[#fdd87d] font-bold">★</span> Asistente financiero con IA</li>
+                    </ul>
+                </div>
+                <div class="card-footer p-6">
+                    <button class="w-full bg-[#fdd87d] text-black py-3.5 px-6 rounded-full font-bold hover:brightness-110 transition-all duration-300 text-sm shadow-md hover:scale-[1.02]">
+                        Suscribirse ahora
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-[#fdd87d] flex flex-col justify-between custom-card">
+                <div class="card-header-top" style="background: rgba(0, 0, 0, 0.05);"></div>
+                <div class="card-highlight" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); color: #fdd87d;">🛡️</div>
+                <div class="card-content flex-1 flex flex-col justify-between pt-16 px-6 pb-4 text-black">
+                    <div>
+                        <h3 class="text-3xl font-black mb-2">¿Por qué?</h3>
+                        <p class="text-black/70 text-base font-bold mb-5">Seguridad total</p>
+                        <p class="text-black/90 text-sm leading-relaxed font-medium">
+                            QuackWallet actua como una capa inteligente entre tu y tus pagos dgitales, ademas es simple, seguro y bajo tu control
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer p-6 space-y-3.5">
+                    <div class="bg-black/10 p-4 rounded-2xl">
+                        <p class="font-black text-sm mb-0.5">✓ Seguridad garantizada</p>
+                        <p class="text-xs font-medium opacity-80">Configura tus reglas de autorizacion</p>
+                    </div>
+                    <div class="bg-black/10 p-4 rounded-2xl">
+                        <p class="font-black text-sm mb-0.5">⚡ Rapidez Total</p>
+                        <p class="text-xs font-medium opacity-80">Recibe alertas en cada transaccion en tiempo real</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+  <!--  Fin de Sección numero 3: Plan/Modelo de negocios -->
 
 <!-- Inicio Seccion final: Equipo/Integrantes de QuackWallet-->
     <section id="equipo" class="min-h-screen w-full snap-start flex flex-col items-center justify-center bg-black py-10 px-6">
