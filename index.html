@@ -7,9 +7,7 @@
     <title>Quackwallet</title>
     <link rel="stylesheet" href="./dist/output.css"> <!-- Enlace a tailwindcss-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--Enlace para iconos de Font Awesome -->
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/732/732190.png"> <!-- Enlace al icono de la pestaña -->
-
-    <link rel="icon" type="image/png" href="imagenes/logodef04.png"> <!-- Logo del proyecto QuackWallet -->
+    <link rel="icon" type="image/png" href="imagenes/UpdateLogoDef.png"> <!-- Logo del proyecto QuackWallet -->
     <style>
     /* Para ocultar el scrollbar */
     html, body {
@@ -77,7 +75,7 @@
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
         height: auto !important;
-        min-height: 600px !important;
+        min-height: 200px !important;
     }
 
     #planes .grid > div:hover {
@@ -184,6 +182,80 @@
         transform: scale(1.02) !important;
     }
 
+/* Estilos para MISIÓN y VISIÓN corregidos */
+    .card-expanded {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important; /* Centra verticalmente en reposo */
+        padding: 0 !important;
+        min-height: 120px !important; /* Le damos un poquito más de aire para que respire el título */
+        height: 120px !important;
+    }
+
+    .card-expanded h2 {
+        transition: all 0.6s ease !important;
+        opacity: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important; /* Centra horizontalmente */
+        margin: auto 0 !important; /* El 'auto' mágico fuerza el centrado vertical absoluto */
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 1.2 !important; /* Corregido de 1 a 1.2 para evitar que se aplaste */
+        height: auto !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+    }
+
+    .card-expanded .card-content {
+        transition: all 0.6s ease !important;
+        opacity: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        text-align: center !important;
+    }
+
+    @media (min-width: 768px) {
+        .card-expanded:hover {
+            height: auto !important;
+            min-height: 220px !important;
+            padding: 2rem 1.5rem !important;
+            justify-content: center !important; /* Cambiado de flex-start a center */
+            align-items: center !important; /* Cambiado de flex-start a center */
+        }
+
+        .card-expanded:hover h2 {
+            opacity: 0 !important;
+            display: none !important;
+        }
+
+        .card-expanded:hover .card-content {
+            max-height: 500px !important;
+            opacity: 1 !important;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .card-expanded {
+            height: auto !important;
+            min-height: auto !important;
+            padding: 1.5rem !important;
+        }
+
+        .card-expanded h2 {
+            display: block !important;
+            opacity: 1 !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .card-expanded .card-content {
+            opacity: 1 !important;
+            max-height: 500px !important;
+            margin-top: 1rem !important;
+        }
+    }
+
     @media (max-width: 768px) {
         #planes .grid {
             grid-template-columns: 1fr !important;
@@ -237,7 +309,7 @@
 
         <div class="absolute top-10 right-10 w-24 h-24 md:w-40 md:h-40">
             <!-- Primer Logo -->
-            <img src="imagenes/logodef04.png" 
+            <img src="imagenes/UpdateLogoDef.png" 
                 class="absolute inset-0 w-full h-full object-contain animacion-logo" 
                 alt="Logo QuackWallet">
             
@@ -277,14 +349,13 @@
         <div class="info-grid px-4">
             
             <div class="flex flex-col items-center order-1 w-full">
-                <input type="checkbox" id="toggle-mision" class="card-toggle">
                 <div class="card-container">
-                    <label for="toggle-mision" class="card-expanded cursor-pointer shadow-lg">
+                    <div class="card-expanded cursor-pointer shadow-lg">
                         <h2 class="text-[#fdd87d] font-black text-xl uppercase tracking-widest">MISIÓN</h2>
                         <div class="card-content text-center px-4">
                             <p class="text-white text-xs leading-tight">Para las personas que les preocupa sus pagos electrónicos cansando de fraudes y estafas virtuales ofrecemos métodos de seguridad modernas, gestión de sus tarjetas a nivel nacional usando tecnologías de seguridad personalizable y consultas de su historial de pagos efectuados y confirmados para lograr una mejor confiabilidad en el usuario.</p>
                         </div>
-                    </label>
+                    </div>
                 </div>
             </div>
 
@@ -315,14 +386,13 @@
             </div>
 
             <div class="flex flex-col items-center order-2 md:order-3 w-full">
-                <input type="checkbox" id="toggle-vision" class="card-toggle">
                 <div class="card-container">
-                    <label for="toggle-vision" class="card-expanded cursor-pointer shadow-lg">
+                    <div class="card-expanded cursor-pointer shadow-lg">
                         <h2 class="text-[#fdd87d] font-black text-xl uppercase tracking-widest">VISIÓN</h2>
                         <div class="card-content text-center px-4">
                             <p class="text-white text-xs leading-tight">Optimizar la seguridad bancaria actual para ofrecer soluciones más eficientes, seguras y confiables para los usuarios.</p>
                         </div>
-                    </label>
+                    </div>
                 </div>
             </div>
 
@@ -332,10 +402,10 @@
 
     <!--  Inicio de Sección numero 3: Plan/Modelo de negocios -->
 
-    <section id="planes" class="min-h-screen w-full snap-start flex flex-col items-center justify-center py-20 px-4 md:px-6 relative">
+    <section id="planes" class="min-h-screen w-full snap-start flex flex-col items-center justify-center py-12 px-4 md:px-6 relative">
         
-        <div class="flex flex-col items-center text-center mb-16 relative z-10">
-            <img src="imagenes/logodef04.png" class="w-16 h-16 object-contain mb-6" alt="Logo Quack">
+        <div class="flex flex-col items-center text-center mb-10 relative z-10">
+            <img src="imagenes/UpdateLogoDef.png" class="w-28 h-28 md:w-40 md:h-40 object-contain mb-6" alt="Logo Quack">
             <h2 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6">
                 Aprovecha más ventajas con <span class="text-[#fdd87d]">QuackWallet</span>
             </h2>
@@ -376,9 +446,7 @@
             </div>
 
             <div class="bg-[#121212] relative flex flex-col justify-between custom-card">
-                <div class="absolute -top-5 left-1/2 -translate-x-1/2 ml-8 bg-gradient-to-r from-[#fdd87d] to-[#fcc956] text-black text-sm font-black px-7 py-2.5 rounded-full uppercase tracking-wider shadow-xl z-20 whitespace-nowrap">
-                    Recomendado
-                </div>
+
                 <div class="card-header-top" style="background: linear-gradient(135deg, rgba(253, 216, 125, 0.3) 0%, rgba(253, 216, 125, 0.1) 100%);"></div>
                 <div class="card-highlight">👑</div>
                 <div class="card-content flex-1 flex flex-col justify-between pt-16 px-6 pb-4">
